@@ -7,7 +7,7 @@ function Footer() {
 
 			<div className="footer-left">
 
-				<h3>Covid<span> Tracker</span></h3>
+				<h3><span style={{color:'black'}}>&#9760;</span>Covid<span> Tracker</span></h3>
 
 				<p className="footer-links">
 					<a href="#" className="link-1">Home</a>
