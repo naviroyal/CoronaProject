@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
+h1{
+    font-family: 'Josefin Sans', cursive;
+    color: black;   
+    text-align: center;
+    margin-top: 0vh;
+    padding-top: 3vh;
+    float: left;
+    margin-left: 4vh;
+}
+
+hr{
+    width: 100%;
+    background-color: #f8ceec;
+    background-image: linear-gradient(315deg, #f8ceec 0%, #a88beb 74%);
+
+}
+
+.header{
+    background-color: #f8ceec;
+    background-image: linear-gradient(315deg, #f8ceec 0%, #a88beb 74%);
+
+}
+
+/* 
+@media screen and (max-width: 454px) {
+    hr {
+        width:120%;
+    }
+  } */

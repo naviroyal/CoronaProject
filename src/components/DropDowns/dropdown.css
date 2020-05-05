@@ -1,0 +1,28 @@
+.dropdown{
+    padding:1vh 2vh;
+    margin:3vh auto; 
+    border:5px;
+    box-shadow: 0 5px 5px 5px grey;
+}
+
+.flag-select__option__icon{
+  width: 1.3em;
+    height: 1.3em;
+    position: relative;
+    top: 0em;
+}
+
+
+/* body {
+  text-align: center;
+} */
+  
+/* 
+  @media screen and (max-width: 700px) {
+    .dropdown {
+        width: fit-content;
+        padding-right: 6vh;
+        margin: auto;
+    }
+  } */
+
