@@ -29,7 +29,7 @@ contextvars==2.4
 coverage==4.4.1
 covid==2.2.6
 covid-india==1.0.0
-cryptography==2.1.4
+cryptography==2.3
 cupshelpers==1.0
 cycler==0.10.0
 dataclasses==0.7
