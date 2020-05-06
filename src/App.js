@@ -16,11 +16,11 @@ function App() {
   const [selectedCountryData,setSelectedCountryData]=useState(null);
   const [selectedStateData,setSelectedStateData]=useState(null);
    
-  let options = [ "Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa",
+  let options = [ "Andaman and Nicobar Islands","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh",
+  "Chandigarh","Dadar Nagar Haveli","Delhi","Goa",
   "Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala",
-  "Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Odisha","Punjab",
-  "Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttarakhand","Uttar Pradesh","West Bengal",
-  "Chandigarh","Delhi","Puducherry"]
+  "Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Odisha","Puducherry","Punjab",
+  "Rajasthan","Tamil Nadu","Telangana","Tripura","Uttarakhand","Uttar Pradesh","West Bengal"]
 
   const changeCountryHandler = (country) =>{
         setCountrySelect(countries[country].name);
