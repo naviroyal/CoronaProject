@@ -24,22 +24,23 @@ function App() {
 
   const changeCountryHandler = (country) =>{
         setCountrySelect(countries[country].name);
-        let url= '/country/';
+        let url= 'https://pythoncoronaapi.herokuapp.com/country/';
         console.log(countries[country].name);
         url=url+countries[country].name;
         fetch(url).then(res => res.json()).then(data => {
-          setSelectedCountryData(data.country);
+          
+          setSelectedCountryData(data);
         });
   }
 
   const stateChangeHandler = (state) =>{
     setStateSelect(state.value);
-    let url= '/state/';
+    let url= 'https://pythoncoronaapi.herokuapp.com/state/';
 //    console.log(state.value);
     url=url+state.value;
 //    console.log(url);
     fetch(url).then(res => res.json()).then(data => {
-      setSelectedStateData(data.state);
+      setSelectedStateData(data);
 //      console.log(data.state);
     });
 }

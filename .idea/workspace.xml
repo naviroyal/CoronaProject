@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b8fb648d-bf5c-46f8-b2f9-10e6e2cb4009" name="Default Changelist" comment="" />
+    <list default="true" id="b8fb648d-bf5c-46f8-b2f9-10e6e2cb4009" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/precache-manifest.31ffe6a0008491d91306c527ab06b237.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/service-worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.ad70f417.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.ad70f417.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,22 +89,22 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="1244" y="313" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1588706550804" />
-    <state width="695" height="340" key="GridCell.Tab.0.bottom" timestamp="1588759479381">
+    <state width="817" height="340" key="GridCell.Tab.0.bottom" timestamp="1588762915457">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="695" height="340" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1588759479381" />
-    <state width="695" height="340" key="GridCell.Tab.0.center" timestamp="1588759479380">
+    <state width="817" height="340" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1588762915457" />
+    <state width="817" height="340" key="GridCell.Tab.0.center" timestamp="1588762915455">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="695" height="340" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1588759479380" />
-    <state width="695" height="340" key="GridCell.Tab.0.left" timestamp="1588759479379">
+    <state width="817" height="340" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1588762915455" />
+    <state width="817" height="340" key="GridCell.Tab.0.left" timestamp="1588762915454">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="695" height="340" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1588759479379" />
-    <state width="695" height="340" key="GridCell.Tab.0.right" timestamp="1588759479381">
+    <state width="817" height="340" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1588762915454" />
+    <state width="817" height="340" key="GridCell.Tab.0.right" timestamp="1588762915456">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="695" height="340" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1588759479381" />
+    <state width="817" height="340" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1588762915456" />
     <state x="353" y="239" key="SettingsEditor" timestamp="1588742732622">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
