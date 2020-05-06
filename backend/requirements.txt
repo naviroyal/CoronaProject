@@ -151,7 +151,7 @@ python-socketio==4.4.0
 python-telegram-bot==11.1.0
 pytz==2019.3
 pyxdg==0.25
-PyYAML==3.12
+PyYAML==5.1
 questionary==1.5.1
 rasa==1.8.1
 rasa-sdk==1.8.0
