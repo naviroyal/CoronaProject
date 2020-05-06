@@ -16,7 +16,7 @@ function Footer() {
 					<a href="#">Contact</a>
 				</p>
 
-				<p className="footer-company-name">Company Name © 2020</p>
+				<p className="footer-company-name">Navdeep Singh © 2020</p>
 			</div>
 
 			<div className="footer-center">
