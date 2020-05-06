@@ -14,13 +14,15 @@ def index():
 # @cross_origin()
 def getdata(country):
     covid = Covid()
-    # print(country)
+    print(country)
     # country=country.replace('-',' ')
-    # print(country)
+    print(country)
     return {'country':covid.get_status_by_country_name(country)}
 
 
 @app.route('/state/<state>')
 # @cross_origin()
 def get_state(state):
+    print("safdadgavasva")
+    print(states.getdata(state))
     return {'state':states.getdata(state)}

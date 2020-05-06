@@ -35,12 +35,12 @@ function App() {
   const stateChangeHandler = (state) =>{
     setStateSelect(state.value);
     let url= '/state/';
-    console.log(state.value);
+//    console.log(state.value);
     url=url+state.value;
-    console.log(url);
+//    console.log(url);
     fetch(url).then(res => res.json()).then(data => {
       setSelectedStateData(data.state);
-      console.log(data.state);
+//      console.log(data.state);
     });
 }
 

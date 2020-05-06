@@ -1,15 +1,16 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
+node_modules
 /.pnp
 .pnp.js
+
+# testing
+/coverage
+
 src/*
 public/*
 build/static/css/*.map
 build/static/js/*.map
-# testing
-/coverage
 
 # production
 #/build
@@ -25,21 +26,11 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-.idea/
-.vscode/
-node_modules/
+*.pyc
+./*.pyc
+
+/env
+
+*__pycache__
 build
-*.tgz
-my-app*
-template/src/__tests__/__snapshots__/
-lerna-debug.log
-/.changelog
-.npm/
-yarn.lock
-
-
-venv/
-__pycache__/
-env/
 .env
-.idea/
