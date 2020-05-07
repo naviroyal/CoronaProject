@@ -41,7 +41,7 @@ function App() {
     url=url+state.value;
 //    console.log(url);
     fetch(url).then(res => res.json()).then(data => {
-      setGlobalData(data);
+      setSelectedStateData(data);
 //      console.log(data.state);
     });
 }
