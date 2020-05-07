@@ -15,7 +15,8 @@ function App() {
   const [countrySelect,setCountrySelect ] = useState(null);
   const [selectedCountryData,setSelectedCountryData]=useState(null);
   const [selectedStateData,setSelectedStateData]=useState(null);
-   
+  const [globalData,setGlobalData]=useState(null); 
+
   let options = [ "Andaman and Nicobar Islands","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh",
   "Chandigarh","Dadar Nagar Haveli","Delhi","Goa",
   "Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala",
@@ -40,15 +41,33 @@ function App() {
     url=url+state.value;
 //    console.log(url);
     fetch(url).then(res => res.json()).then(data => {
-      setSelectedStateData(data);
+      setGlobalData(data);
 //      console.log(data.state);
     });
 }
+
+  useEffect(()=>{
+    let url= 'https://pythoncoronaapi.herokuapp.com/global';
+    //    console.log(state.value);
+        // url=url+state.value;
+    //    console.log(url);
+        fetch(url).then(res => res.json()).then(data => {
+          setGlobalData(data);
+    //      console.log(data.state);
+        });
+  })
 
   return (
     <div className="App">
          <Header/>
          <hr className="top-line"></hr>
+         <h1 className="india-heading">Global Data </h1>
+         {globalData!=null? <CountryDiv confirmed={globalData['confirmed']}
+                  active={globalData['active']}
+                  recovered={globalData['recovered']}
+                  death={globalData['deaths']}/>:null}
+                <hr className="line"></hr>
+
          <h1 className="india-heading">Get Corona Results Counrty Wise </h1>
         <div>
           <DropDown changeCountryHandler={changeCountryHandler}/>
