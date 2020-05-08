@@ -1,6 +1,6 @@
 import React from 'react';
 import './countryDiv.css';
-import CaseChart from '../CaseChart/CaseChart';
+import CaseChart from './CaseChart';
 import {Container, Row , Col} from 'react-bootstrap';
 
 
