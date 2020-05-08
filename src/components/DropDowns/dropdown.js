@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './dropdown.css';
-import Select from 'react-select';
-import countryList from 'react-select-country-list';
 import ReactFlagsSelect from 'react-flags-select';
 import 'react-flags-select/css/react-flags-select.css';
 

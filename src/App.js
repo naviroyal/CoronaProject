@@ -4,7 +4,6 @@ import {countries} from 'country-data';
 import Header from './components/Header/header';
 import DropDown from './components/DropDowns/dropdown';
 import CountryDiv from './components/CountryDiv/countryDiv';
-import {StateDropdown} from 'react-india-state-region-selector';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -16,6 +15,10 @@ function App() {
   const [selectedCountryData,setSelectedCountryData]=useState(null);
   const [selectedStateData,setSelectedStateData]=useState(null);
   const [globalData,setGlobalData]=useState(null); 
+  let [graphDataForCountry,setGraphDataForCountry]=useState(null);
+  let [visualdata,setVisualData]=useState(null);
+  let [worldStats,setWorldStates]=useState(null);
+  let [worldChart,setWorldChart]=useState(null);
 
   let options = [ "Andaman and Nicobar Islands","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh",
   "Chandigarh","Dadar Nagar Haveli","Delhi","Goa",
@@ -55,26 +58,61 @@ function App() {
           setGlobalData(data);
     //      console.log(data.state);
         });
-  })
+
+    fetch("https://pomber.github.io/covid19/timeseries.json")
+    .then(response => response.json())
+    .then(data => {
+         worldStats = { confirmed: 0, recovered: 0, deaths: 0 };
+         graphDataForCountry = Object.keys(data).map(i => i);
+         graphDataForCountry.forEach((country) => {
+            let countryData = data[country];
+            // pick last object for today data
+            countryData = countryData[countryData.length - 1];
+            worldStats.confirmed += countryData.confirmed;
+            worldStats.recovered += countryData.recovered;
+            worldStats.deaths += countryData.deaths;
+        });
+        // world data
+        worldChart = [];
+        graphDataForCountry.forEach((country) => {
+            let countryData = data[country];
+            countryData.forEach((dailyData, index) => {
+                if (worldChart[index] === undefined) {
+                    var worldStats = { date: dailyData.date, confirmed: dailyData.confirmed, recovered: dailyData.recovered, deaths: dailyData.deaths };
+                    worldChart.push(worldStats);
+                } else {
+                    worldChart[index].confirmed += dailyData.confirmed;
+                    worldChart[index].recovered += dailyData.recovered;
+                    worldChart[index].deaths += dailyData.deaths;
+                }
+            });
+
+        });
+        setGraphDataForCountry(graphDataForCountry);
+        setVisualData(data);
+        setWorldStates(worldStats);
+        setWorldChart(worldChart)
+    });
+  },[]);
 
   return (
     <div className="App">
          <Header/>
          <hr className="top-line"></hr>
          <h1 className="india-heading">Global Data </h1>
-         {globalData!=null? <CountryDiv confirmed={globalData['confirmed']}
+         {globalData!=null? <CountryDiv stats={worldChart} confirmed={globalData['confirmed']}
                   active={globalData['active']}
                   recovered={globalData['recovered']}
-                  death={globalData['deaths']}/>:null}
+                  death={globalData['deaths']} selectedCountry="Global Numbers"/>:null}
                 <hr className="line"></hr>
 
          <h1 className="india-heading">Get Corona Results Counrty Wise </h1>
         <div>
           <DropDown changeCountryHandler={changeCountryHandler}/>
-          {selectedCountryData!=null? <CountryDiv confirmed={selectedCountryData['confirmed']}
+          {selectedCountryData!=null? <CountryDiv stats={countrySelect === 'United States'?visualdata['US']:visualdata[countrySelect]} confirmed={selectedCountryData['confirmed']}
                   active={selectedCountryData['active']}
                   recovered={selectedCountryData['recovered']}
-                  death={selectedCountryData['deaths']}/>:null}
+                  death={selectedCountryData['deaths']} selectedCountry={countrySelect}/>:null}
                 <hr className="line"></hr>
         </div>        
         <div className="state-container">
