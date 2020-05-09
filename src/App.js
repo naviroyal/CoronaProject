@@ -118,7 +118,7 @@ function App() {
         <div className="state-container">
           <h1 className="india-heading">Get Results StateWise For India</h1>
           <Dropdown options={options} placeholderClassName='myPlaceholderClassName' menuClassName='myMenuClassName' controlClassName='myControlClassName' className="myClassName state-dropdown" onChange={(val)=>stateChangeHandler(val)} value={stateSelect} placeholder="Select a State" />
-          { selectedStateData!=null? <CountryDiv confirmed={selectedStateData['Total']} 
+          { selectedStateData!=null? <CountryDiv stats="states" confirmed={selectedStateData['Total']} 
                   active={selectedStateData['Total']-selectedStateData['Cured']-selectedStateData['Death']}
                   recovered={selectedStateData['Cured']}
                   death={selectedStateData['Death']}/>:null}
