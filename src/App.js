@@ -175,10 +175,7 @@ const changeCountryTwoHandler = (country) =>{
                   recoveredTwo={selectedCountryTwoData['recovered']}
                   deathTwo={selectedCountryTwoData['deaths']} 
                   selectedOneCountry={countryOneSelect} selectedTwoCountry={countryTwoSelect}/>:null}
-
-
-
-                <hr className="line"></hr>
+          <hr className="line"></hr>
         </div>   
 
 

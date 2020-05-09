@@ -29,7 +29,7 @@ function Comparison(props){
         return (
             <Container fluid>
                 <Row className='today-row justify-content-center'>
-                    <Col md={2} sm={4} xs={4} className="confirmed">
+                    <Col md={2} sm={4} xs={5} className="confirmed">
                         <p className="head-font">Total Cases</p>
                         {/* <div className="cases-styling">
                                 <p className="body-font">{props.selectedOneCountry} </p>
@@ -51,7 +51,7 @@ function Comparison(props){
                         </div>
                         
                     </Col>
-                    <Col md={2} sm={4} xs={4} className="active">
+                    <Col md={2} sm={4} xs={5} className="active">
                         <p className="head-font">Active Cases</p>
                         <div>
                             <p style={{float:'left'}}>{props.selectedOneCountry}</p>
@@ -64,7 +64,7 @@ function Comparison(props){
                             <CaseChart chartData={active2} dates ={dates2} color="purple"/>
                         </div>
                     </Col>
-                    <Col md={2} sm={4} xs={4} className="recovered ">
+                    <Col md={2} sm={4} xs={5} className="recovered ">
                         <p className="head-font">Recovered</p>
                         <div>
                             <p style={{float:'left'}}>{props.selectedOneCountry}</p>
@@ -77,7 +77,7 @@ function Comparison(props){
                             <CaseChart chartData={recovered2} dates ={dates2} color="purple"/>
                         </div>
                     </Col>
-                    <Col md={2} sm={4} xs={4} className="deaths">
+                    <Col md={2} sm={4} xs={5} className="deaths">
                         <p className="head-font">Deaths</p>
                         <div>
                             <p style={{float:'left'}}>{props.selectedOneCountry}</p>
