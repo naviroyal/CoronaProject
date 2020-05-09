@@ -7,7 +7,7 @@ function Footer() {
 
 			<div className="footer-left">
 
-				<h3><span style={{color:'black'}}>&#9760;</span>Covid<span> Tracker</span></h3>
+				<h3><span><img style={{padding:'0px 0px 6px 0px'}} src="logo192.png" height="34px" width="50px" alt="india-flag"/></span>Covid<span> Tracker</span></h3>
 
 				<p className="footer-links">
 					<a href="#" className="link-1">Home</a>

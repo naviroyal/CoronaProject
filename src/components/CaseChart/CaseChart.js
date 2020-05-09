@@ -39,7 +39,7 @@ class CaseChart extends React.Component {
                     {
                         label: "Confirmed",
                         data : dailyArr.splice(-20), 
-                        borderColor : '#4285f4',
+                        borderColor : props.color,
                         fill : false,
                        pointRadius : 0
                     }

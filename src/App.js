@@ -8,11 +8,16 @@ import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './components/Footer/footer';
+import Comparison from './components/Comparison/Comparison';
  
 function App() {
   const [stateSelect, setStateSelect] = useState('');
   const [countrySelect,setCountrySelect ] = useState(null);
+  const [countryOneSelect,setCountryOneSelect ] = useState(null);
+  const [countryTwoSelect,setCountryTwoSelect ] = useState(null);
   const [selectedCountryData,setSelectedCountryData]=useState(null);
+  const [selectedCountryOneData,setSelectedCountryOneData]=useState(null);
+  const [selectedCountryTwoData,setSelectedCountryTwoData]=useState(null);
   const [selectedStateData,setSelectedStateData]=useState(null);
   const [globalData,setGlobalData]=useState(null); 
   let [graphDataForCountry,setGraphDataForCountry]=useState(null);
@@ -36,6 +41,44 @@ function App() {
           setSelectedCountryData(data);
         });
   }
+
+
+  const changeCountryOneHandler = (country) =>{
+    if (countries[country].name === 'United States')
+    {
+      setCountryOneSelect('US');
+    }else
+    {
+      setCountryOneSelect(countries[country].name);
+    
+    }
+    let url= 'https://pythoncoronaapi.herokuapp.com/country/';
+    console.log(countries[country].name);
+    url=url+countries[country].name;
+    fetch(url).then(res => res.json()).then(data => {
+      
+      setSelectedCountryOneData(data);
+    });
+}
+
+
+const changeCountryTwoHandler = (country) =>{
+  if (countries[country].name === 'United States')
+    {
+      setCountryTwoSelect('US');
+    }else
+    {
+      setCountryTwoSelect(countries[country].name);
+    
+    }
+  let url= 'https://pythoncoronaapi.herokuapp.com/country/';
+  console.log(countries[country].name);
+  url=url+countries[country].name;
+  fetch(url).then(res => res.json()).then(data => {
+    
+    setSelectedCountryTwoData(data);
+  });
+}
 
   const stateChangeHandler = (state) =>{
     setStateSelect(state.value);
@@ -108,13 +151,38 @@ function App() {
 
          <h1 className="india-heading">Get Corona Results Counrty Wise </h1>
         <div>
-          <DropDown changeCountryHandler={changeCountryHandler}/>
+          <DropDown changeCountryHandler={changeCountryHandler} placeholder="Select a Country"/>
           {selectedCountryData!=null? <CountryDiv stats={countrySelect === 'United States'?visualdata['US']:visualdata[countrySelect]} confirmed={selectedCountryData['confirmed']}
                   active={selectedCountryData['active']}
                   recovered={selectedCountryData['recovered']}
                   death={selectedCountryData['deaths']} selectedCountry={countrySelect}/>:null}
                 <hr className="line"></hr>
-        </div>        
+        </div>
+
+        <h1 className="india-heading">Compare Across Two Countries </h1>
+        <div>
+          <div className="compare-dropdown">
+            <DropDown changeCountryHandler={changeCountryOneHandler} placeholder="Country 1" />
+            <DropDown changeCountryHandler={changeCountryTwoHandler} placeholder="Country 2"/>
+          </div>
+          {selectedCountryOneData!=null && selectedCountryTwoData!=null ? <Comparison stats1={visualdata[countryOneSelect]} stats2={visualdata[countryTwoSelect]} 
+                  confirmedOne={selectedCountryOneData['confirmed']}
+                  activeOne={selectedCountryOneData['active']}
+                  recoveredOne={selectedCountryOneData['recovered']}
+                  deathOne={selectedCountryOneData['deaths']} 
+                  confirmedTwo={selectedCountryTwoData['confirmed']}
+                  activeTwo={selectedCountryTwoData['active']}
+                  recoveredTwo={selectedCountryTwoData['recovered']}
+                  deathTwo={selectedCountryTwoData['deaths']} 
+                  selectedOneCountry={countryOneSelect} selectedTwoCountry={countryTwoSelect}/>:null}
+
+
+
+                <hr className="line"></hr>
+        </div>   
+
+
+
         <div className="state-container">
           <h1 className="india-heading">Get Results StateWise For India</h1>
           <Dropdown options={options} placeholderClassName='myPlaceholderClassName' menuClassName='myMenuClassName' controlClassName='myControlClassName' className="myClassName state-dropdown" onChange={(val)=>stateChangeHandler(val)} value={stateSelect} placeholder="Select a State" />

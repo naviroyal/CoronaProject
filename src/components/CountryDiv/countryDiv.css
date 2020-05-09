@@ -197,3 +197,12 @@
     color: #5a0401;
     background-image: linear-gradient(#fe8683,#ff9d9b);
 } */
+
+
+
+.cases-styling{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}

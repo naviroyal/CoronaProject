@@ -53,22 +53,22 @@ function CountryDiv(props){
                     <Col md={2} sm={4} xs={4} className="confirmed">
                         <p className="head-font">Total Cases</p>
                         <p className="body-font">{props.confirmed}</p>
-                        <CaseChart chartData={confirmed} dates ={dates} color="#005C25"/>
+                        <CaseChart chartData={confirmed} dates ={dates} color="#4285f4"/>
                     </Col>
                     <Col md={2} sm={4} xs={4} className="active">
                         <p className="head-font">Active Cases</p>
                         <p className="body-font"> {props.active}</p>
-                        <CaseChart chartData={active} dates ={dates} color="#005C25"/>
+                        <CaseChart chartData={active} dates ={dates} color="#4285f4"/>
                     </Col>
                     <Col md={2} sm={4} xs={4} className="recovered ">
                         <p className="head-font">Recovered</p>
                         <p className="body-font">{props.recovered}</p>
-                        <CaseChart chartData={recovered} dates ={dates} color="#005C25"/>
+                        <CaseChart chartData={recovered} dates ={dates} color="#4285f4"/>
                     </Col>
                     <Col md={2} sm={4} xs={4} className="deaths">
                         <p className="head-font">Deaths</p>
                     <p className="body-font">{props.death}</p>
-                    <CaseChart chartData={deaths} dates ={dates} color="#005C25"/>
+                    <CaseChart chartData={deaths} dates ={dates} color="#4285f4"/>
                     </Col>
                 </Row>
             </Container>
