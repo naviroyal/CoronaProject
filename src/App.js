@@ -9,6 +9,9 @@ import 'react-dropdown/style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './components/Footer/footer';
 import Comparison from './components/Comparison/Comparison';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import {DistrictWise} from './components/DistrictWise/DistrictWise';
  
 function App() {
   const [stateSelect, setStateSelect] = useState('');
@@ -19,11 +22,14 @@ function App() {
   const [selectedCountryOneData,setSelectedCountryOneData]=useState(null);
   const [selectedCountryTwoData,setSelectedCountryTwoData]=useState(null);
   const [selectedStateData,setSelectedStateData]=useState(null);
-  const [globalData,setGlobalData]=useState(null); 
+  const [globalData,setGlobalData]=useState(null);
+  const [districtWiseData, setDistrictWiseData] = useState([]); 
   let [graphDataForCountry,setGraphDataForCountry]=useState(null);
   let [visualdata,setVisualData]=useState(null);
   let [worldStats,setWorldStates]=useState(null);
   let [worldChart,setWorldChart]=useState(null);
+  const [startDate,setStartDate]=useState(new Date("2020-1-22"));
+  const [endDate,setEndDate]=useState(new Date());
 
   let options = [ "Andaman and Nicobar Islands","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh",
   "Chandigarh","Dadar Nagar Haveli","Delhi","Goa",
@@ -90,6 +96,7 @@ const changeCountryTwoHandler = (country) =>{
       setSelectedStateData(data);
 //      console.log(data.state);
     });
+    getDistrictWiseData(state.value);
 }
 
   useEffect(()=>{
@@ -138,6 +145,25 @@ const changeCountryTwoHandler = (country) =>{
     });
   },[]);
 
+  const getDistrictWiseData = (state) => {
+    fetch("https://api.covid19india.org/state_district_wise.json")
+    .then(res =>res.json())
+    .then(data=>{
+      console.log(data);
+      console.log(data[state].districtData)
+      let districtData=[];
+      for (var key in data[state].districtData){
+        if (data[state].districtData.hasOwnProperty(key)) {
+          districtData.push({"name":key,"confirmed":data[state].districtData[key].confirmed, "active":data[state].districtData[key].active, "recovered":data[state].districtData[key].recovered, "death":data[state].districtData[key].deceased})
+      }
+      }
+        console.log(districtData);
+      setDistrictWiseData(districtData);
+      })
+  }
+
+
+
   return (
     <div className="App">
          <Header/>
@@ -151,7 +177,7 @@ const changeCountryTwoHandler = (country) =>{
 
          <h1 className="india-heading">Get Corona Results Counrty Wise </h1>
         <div>
-          <DropDown changeCountryHandler={changeCountryHandler} placeholder="Select a Country"/>
+          <DropDown changeCountryHandler={changeCountryHandler} placeholder="Select a Country" alignOptions="right"/>
           {selectedCountryData!=null? <CountryDiv stats={countrySelect === 'United States'?visualdata['US']:visualdata[countrySelect]} confirmed={selectedCountryData['confirmed']}
                   active={selectedCountryData['active']}
                   recovered={selectedCountryData['recovered']}
@@ -162,8 +188,21 @@ const changeCountryTwoHandler = (country) =>{
         <h1 className="india-heading">Compare Across Two Countries </h1>
         <div>
           <div className="compare-dropdown">
-            <DropDown changeCountryHandler={changeCountryOneHandler} placeholder="Country 1" />
-            <DropDown changeCountryHandler={changeCountryTwoHandler} placeholder="Country 2"/>
+            <DropDown changeCountryHandler={changeCountryOneHandler} placeholder="Country 1" alignOptions="right"/>
+            <DropDown changeCountryHandler={changeCountryTwoHandler} placeholder="Country 2" alignOptions="left"/>
+          </div>
+          <div className="compare-dropdown">
+            <div >
+                <h3 className="india-heading">From</h3>
+                <DatePicker className="date-picker" selected={startDate} dateFormat="yyyy-MM-dd" 
+                  placeholderText="Select start Date" onChange={date=>setStartDate(date)}/>
+            </div>
+            <div> 
+                <h3 className="india-heading">To</h3>
+                <DatePicker className="date-picker" selected={endDate} dateFormat="yyyy-MM-dd" 
+                placeholderText="Select end Date" onChange={date=>setEndDate(date)}/>
+                
+            </div>
           </div>
           {selectedCountryOneData!=null && selectedCountryTwoData!=null ? <Comparison stats1={visualdata[countryOneSelect]} stats2={visualdata[countryTwoSelect]} 
                   confirmedOne={selectedCountryOneData['confirmed']}
@@ -174,7 +213,10 @@ const changeCountryTwoHandler = (country) =>{
                   activeTwo={selectedCountryTwoData['active']}
                   recoveredTwo={selectedCountryTwoData['recovered']}
                   deathTwo={selectedCountryTwoData['deaths']} 
-                  selectedOneCountry={countryOneSelect} selectedTwoCountry={countryTwoSelect}/>:null}
+                  selectedOneCountry={countryOneSelect} selectedTwoCountry={countryTwoSelect}
+                  startDate={startDate}
+                  endDate={endDate}
+                  />:null}
           <hr className="line"></hr>
         </div>   
 
@@ -187,6 +229,9 @@ const changeCountryTwoHandler = (country) =>{
                   active={selectedStateData['Total']-selectedStateData['Cured']-selectedStateData['Death']}
                   recovered={selectedStateData['Cured']}
                   death={selectedStateData['Death']}/>:null}
+          {selectedStateData!=null?<h1 className="india-heading">District wise :{stateSelect}</h1>:null}
+          { selectedStateData!=null?<DistrictWise districtWiseData={districtWiseData}/>:null}
+          
           <hr className="line"></hr>
         </div>
         <Footer/>

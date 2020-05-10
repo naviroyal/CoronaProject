@@ -9,7 +9,8 @@ function DropDown(props){
         <div className="dropdown-div">
            <ReactFlagsSelect searchable={true} searchPlaceholder="search for a country" 
                     selectedSize={20} placeholder={props.placeholder}
-                    optionsSize={16} className="menu-flags dropdown"
+                    alignOptions={props.alignOptions}
+                    optionsSize={14} className="menu-flags dropdown"
                     onSelect={props.changeCountryHandler}/>
         </div>
          
