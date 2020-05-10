@@ -2,14 +2,16 @@
 @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Eczar&display=swap');
 
-h1{
+.head{
     font-family: 'Josefin Sans', cursive;
     color: black;   
     text-align: center;
     margin-top: 0vh;
+    margin-bottom: 0px;
     padding-top: 3vh;
     float: left;
     margin-left: 4vh;
+    font-size: 2.5rem;
     
 }
 
@@ -17,6 +19,7 @@ h1{
     padding-top: 4vh;
     color: grey;
     font-family: 'Josefin Sans',cursive;
+    font-size: 1.5rem;
 }
 
 
@@ -44,11 +47,49 @@ hr{
 }
 
 
-@media screen and (max-width: 384px) {
-    h1 {
+@media screen and (min-width: 945px) {
+    .head {
         margin-left: 2vh;
     }
     .slogan{
-        padding-top:0px ;
+        padding-top:4vh ;
     }
   }
+
+  @media screen and (max-width: 950px) {
+    .head {
+        margin-left: 2vh;
+    }
+    .slogan{
+        padding-top:0vh ;
+        font-size: 1.5rem;
+    }
+    .Header{
+        padding-bottom: 0px;
+    }
+  }
+
+
+/* @media screen and (max-width: 384px) {
+    .head {
+        margin-left: 2vh;
+    }
+    .slogan{
+        padding-top:0vh ;
+    }
+} */
+
+
+@media screen and (max-width: 633px) and (min-width:200px){
+    .head {
+        margin-left: 2vh;
+        font-size: 2rem;
+    }
+    .slogan{
+        padding-top:0vh ;
+        font-size: .9rem;
+    }
+  }
+
+
+

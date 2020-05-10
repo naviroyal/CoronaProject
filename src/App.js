@@ -169,13 +169,13 @@ const changeCountryTwoHandler = (country) =>{
 
   return (
     <div className="App">
-        <div>
-          <StickyHeader header={
-              <div >
-                <Header/>
-            </div>
-            }></StickyHeader>
-        </div>
+      <div>
+        <StickyHeader header={
+            <div >
+              <Header/>
+          </div>
+          }></StickyHeader>
+      </div>
          <hr className="top-line"></hr>
          <h1 className="india-heading">Global Data </h1>
          {globalData!=null? <CountryDiv stats={worldChart} confirmed={globalData['confirmed']}
