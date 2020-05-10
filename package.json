@@ -25,7 +25,8 @@
     "react-indian-state-region-selector": "^6.1.0",
     "react-scripts": "3.4.1",
     "react-select": "^3.1.0",
-    "react-select-country-list": "^2.1.2"
+    "react-select-country-list": "^2.1.2",
+    "react-sticky-header": "^0.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

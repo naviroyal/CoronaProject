@@ -9,11 +9,12 @@
   background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
 }
 
+
 .date-picker{
   background-color:#b9cdec;
    background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%); 
   padding:0vh;
-  margin:1vh auto; 
+  margin:2vh auto; 
   border:none;
   box-shadow: 0 4px 4px 2px grey;
   font-size: 20px;
@@ -72,7 +73,7 @@
 
 .top-line{
   color:grey;
-  margin-top: 3vh;
+  margin-top: 8vh;
   background-color: #b8c6db;
   background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
 }
@@ -83,4 +84,36 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
+}
+
+
+@media screen and (max-width: 1813px ) and (min-width:1081px){
+  .top-line{
+    margin-top: 12vh;
+  }
+}
+
+
+@media screen and (max-width: 1081px ) and (min-width:723px){
+  .top-line{
+    margin-top: 20vh;
+  }
+}
+
+@media screen and (max-width: 722px) and (min-width:400px){
+  .top-line{
+    margin-top: 23vh;
+  }
+}
+
+@media screen and (max-width: 387px) and (min-width:367px){
+  .top-line{
+    margin-top: 21vh;
+  }
+}
+
+@media screen and (max-width: 367px) and (min-width:200px){
+  .top-line{
+    margin-top: 23vh;
+  }
 }

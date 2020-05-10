@@ -12,7 +12,10 @@ import Comparison from './components/Comparison/Comparison';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import {DistrictWise} from './components/DistrictWise/DistrictWise';
- 
+import 'react-sticky-header/styles.css';
+import StickyHeader from 'react-sticky-header'; 
+
+
 function App() {
   const [stateSelect, setStateSelect] = useState('');
   const [countrySelect,setCountrySelect ] = useState(null);
@@ -166,7 +169,13 @@ const changeCountryTwoHandler = (country) =>{
 
   return (
     <div className="App">
-         <Header/>
+        <div>
+          <StickyHeader header={
+              <div >
+                <Header/>
+            </div>
+            }></StickyHeader>
+        </div>
          <hr className="top-line"></hr>
          <h1 className="india-heading">Global Data </h1>
          {globalData!=null? <CountryDiv stats={worldChart} confirmed={globalData['confirmed']}
