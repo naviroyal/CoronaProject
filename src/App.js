@@ -198,7 +198,7 @@ const changeCountryTwoHandler = (country) =>{
         <div>
           <div className="compare-dropdown">
             <DropDown changeCountryHandler={changeCountryOneHandler} placeholder="Country 1" alignOptions="right"/>
-            <DropDown changeCountryHandler={changeCountryTwoHandler} placeholder="Country 2" alignOptions="left"/>
+            <DropDown changeCountryHandler={changeCountryTwoHandler} placeholder="Country 2" alignOptions="right"/>
           </div>
           <div className="compare-dropdown">
             <div >
