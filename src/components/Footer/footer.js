@@ -15,7 +15,8 @@ function Footer() {
 					<a href="#">Faq</a>
 					<a href="#">Contact</a>
 				</p> */}
-				<p className="footer-company-name" style={{color:'lightseagreen'}}>Navdeep Singh © 2020</p>
+				<p className="footer-company-name" style={{color:'lightseagreen'}}>Navdeep Singh</p>
+				<p className="footer-company-name" style={{color:'lightseagreen'}}>Umesh Sharma</p>
 				<p className="footer-company-name">Under the mentorship of CSE Department,MMDU</p>
 				<p className="footer-company-name">Maharishi Markandeshwar (Deemed to be University)</p>
 			</div>
