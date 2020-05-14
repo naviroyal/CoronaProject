@@ -184,7 +184,7 @@ const changeCountryTwoHandler = (country) =>{
                   death={globalData['deaths']} selectedCountry="Global Numbers"/>:null}
                 <hr className="line"></hr>
 
-         <h1 className="india-heading">Get Corona Results Counrty Wise </h1>
+         <h1 className="india-heading">Get Corona Results Country Wise </h1>
         <div>
           <DropDown changeCountryHandler={changeCountryHandler} placeholder="Select a Country" alignOptions="right"/>
           {selectedCountryData!=null? <CountryDiv stats={countrySelect === 'United States'?visualdata['US']:visualdata[countrySelect]} confirmed={selectedCountryData['confirmed']}
