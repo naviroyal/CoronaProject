@@ -79,6 +79,12 @@
 }
 
 
+.banner{
+  margin-bottom: 6vh;
+  margin-top: 1vh;
+}
+
+
 .compare-dropdown{
   display: flex;
   flex-direction: row;
@@ -89,36 +95,43 @@
 
 @media screen and (max-width: 2000px ) and (min-width:1067px){
   .top-line{
-    margin-top: 11.5vh;
+    margin-top: 9.8vh;
   }
 }
 
 
 @media screen and (max-width: 1066px ) and (min-width:958px){
   .top-line{
-    margin-top: 9.5vh;
+    margin-top: 9.2vh;
   }
 }
 
 @media screen and (max-width: 957px ) and (min-width:949px){
   .top-line{
-    margin-top: 21vh;
+    margin-top: 10.5vh;
   }
 }
 
 
 @media screen and (max-width: 948px) and (min-width:634px){
   .top-line{
-    margin-top: 14vh;
+    margin-top: 15vh;
   }
 }
 
 
-@media screen and (max-width: 633px) and (min-width:367px){
+@media screen and (max-width: 633px) and (min-width:415px){
   .top-line{
-    margin-top: 14vh;
+    margin-top: 11vh;
   }
 }
+
+@media screen and (max-width: 414px) and (min-width:367px){
+  .top-line{
+    margin-top: 11vh;
+  }
+}
+
 /* 
 @media screen and (max-width: 397px) and (min-width:367px){
   .top-line{
@@ -128,20 +141,20 @@
 
 @media screen and (max-width: 367px) and (min-width:334px){
   .top-line{
-    margin-top: 17vh;
+    margin-top: 13vh;
   }
 }
 
-@media screen and (max-width: 333px) and (min-width:300px){
+@media screen and (max-width: 333px) and (min-width:307px){
   .top-line{
-    margin-top: 20vh;
+    margin-top: 14vh;
   }
 }
 
 
-@media screen and (max-width: 299px) and (min-width:200px){
+@media screen and (max-width: 306px) and (min-width:200px){
   .top-line{
-    margin-top: 29vh;
+    margin-top: 20.4vh;
   }
 }
 

@@ -14,6 +14,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import {DistrictWise} from './components/DistrictWise/DistrictWise';
 import 'react-sticky-header/styles.css';
 import StickyHeader from 'react-sticky-header'; 
+import banner from './banner.jpg';
+import Image from 'react-bootstrap/Image'
 
 
 function App() {
@@ -177,6 +179,8 @@ const changeCountryTwoHandler = (country) =>{
           }></StickyHeader>
       </div>
          <hr className="top-line"></hr>
+         <Image src={banner} className="banner" alt="Banner" fluid/>
+         
          <h1 className="india-heading">Global Data </h1>
          {globalData!=null? <CountryDiv stats={worldChart} confirmed={globalData['confirmed']}
                   active={globalData['active']}
