@@ -6,29 +6,37 @@ import {Container, Row , Col} from 'react-bootstrap';
 
 
 function CountryDiv(props){
+    
     if(props.stats==='states')
     {
+        let active=0,confirmed=0,recovered=0,death=0;
+            props.districtWiseData.map(item => (
+                active+=item.active,
+                confirmed+=item.confirmed,
+                recovered+=item.recovered,
+                death+=item.death
+            ))
         return (
             <Container fluid>
                 <Row className='today-row justify-content-center'>
                     <Col md={2} sm={4} xs={5} className="confirmed">
                         <p className="head-font">Total Cases</p>
-                        <p className="body-font">{props.confirmed}</p>
+                        <p className="body-font">{confirmed}</p>
                         {/* <CaseChart chartData={confirmed} dates ={dates} color="#005C25"/> */}
                     </Col>
                     <Col md={2} sm={4} xs={5} className="active">
                         <p className="head-font">Active Cases</p>
-                        <p className="body-font"> {props.active}</p>
+                        <p className="body-font"> {active}</p>
                         {/* <CaseChart chartData={active} dates ={dates} color="#005C25"/> */}
                     </Col>
                     <Col md={2} sm={4} xs={5} className="recovered ">
                         <p className="head-font">Recovered</p>
-                        <p className="body-font">{props.recovered}</p>
+                        <p className="body-font">{recovered}</p>
                         {/* <CaseChart chartData={recovered} dates ={dates} color="#005C25"/> */}
                     </Col>
                     <Col md={2} sm={4} xs={5} className="deaths">
                         <p className="head-font">Deaths</p>
-                        <p className="body-font">{props.death}</p>
+                        <p className="body-font">{death}</p>
                         {/* <CaseChart chartData={deaths} dates ={dates} color="#005C25"/> */}
                     </Col>
                 </Row>

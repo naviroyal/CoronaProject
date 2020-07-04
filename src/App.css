@@ -139,13 +139,13 @@
   }
 } */
 
-@media screen and (max-width: 367px) and (min-width:334px){
+@media screen and (max-width: 367px) and (min-width:341px){
   .top-line{
-    margin-top: 13vh;
+    margin-top: 11vh;
   }
 }
 
-@media screen and (max-width: 333px) and (min-width:307px){
+@media screen and (max-width: 340px) and (min-width:307px){
   .top-line{
     margin-top: 14vh;
   }

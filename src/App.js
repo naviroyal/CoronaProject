@@ -241,7 +241,7 @@ const changeCountryTwoHandler = (country) =>{
           { selectedStateData!=null? <CountryDiv stats="states" confirmed={selectedStateData['Total']} 
                   active={selectedStateData['Total']-selectedStateData['Cured']-selectedStateData['Death']}
                   recovered={selectedStateData['Cured']}
-                  death={selectedStateData['Death']}/>:null}
+                  death={selectedStateData['Death']} districtWiseData={districtWiseData}/>:null}
           {selectedStateData!=null?<h1 className="india-heading">District wise :{stateSelect}</h1>:null}
           { selectedStateData!=null?<DistrictWise districtWiseData={districtWiseData}/>:null}
           
