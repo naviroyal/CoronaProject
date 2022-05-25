@@ -131,7 +131,7 @@ pycups==1.9.73
 pydantic==1.5.1
 pydot==1.4.1
 pygobject==3.26.1
-PyJWT==1.7.1
+PyJWT==2.4.0
 pykwalify==1.7.0
 pymacaroons==0.13.0
 pymongo==3.8.0
